@@ -61,6 +61,30 @@ int main()
 	
 	FillRand(arr, n);
 	Print(arr, n);
+	cout << endl;
+
+	int SizeODD = 0;
+	int SizeEVEN = 0;
+	int* even = new int[SizeEVEN];
+	int* odd = new int[SizeODD];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] % 2)
+		{
+			odd[SizeODD] = arr[i];
+			SizeODD++;
+		}
+		else
+		{
+			even[SizeEVEN] = arr[i];
+			SizeEVEN++;
+		}
+
+	}
+	Print(even, SizeEVEN);
+	cout << endl;
+	Print(odd, SizeODD);
 
 	delete[] arr;
 #endif // DYNAMIC_ARRAY
@@ -71,7 +95,7 @@ void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		*(arr + i) = rand() % 100;
+		*(arr + i) = rand() % 100 - 10;
 	}
 }
 void Print(int arr[], const int n)
