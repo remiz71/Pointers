@@ -9,7 +9,7 @@ using std::endl;
 #define tab "\t"
 //#define POINTERS_BASICS
 //#define POINTERS_AND_ARRAYS
-#define DYNAMIC_ARRAY
+#define HOMEWORK
 
 void FillRand(int arr[], const int n);
 void Print(int arr[], const int n);
@@ -50,7 +50,7 @@ int main()
 		cout << *(arr + i) << tab;
 	}
 #endif // POINTERS_AND_ARRAYS
-#ifdef DYNAMIC_ARRAY
+#ifdef HOMEWORK
 	int n = 5; //Размер массива
 	cout << "введите размер массива:  "; cin >> n;
 	int* arr = new int[n]; // Оператор new выделяет память под н элементов указанного типа, в данном случае int
@@ -87,7 +87,7 @@ int main()
 	Print(odd, SizeODD);
 
 	delete[] arr;
-#endif // DYNAMIC_ARRAY
+#endif // HOMEWORK
 
 
 }
