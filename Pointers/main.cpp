@@ -50,43 +50,44 @@ int main()
 		cout << *(arr + i) << tab;
 	}
 #endif // POINTERS_AND_ARRAYS
-#ifdef HOMEWORK
-	int n = 5; //Размер массива
+#ifdef HOMEWORK/
+	int n = 10; //Размер массива
 	cout << "введите размер массива:  "; cin >> n;
 	int* arr = new int[n]; // Оператор new выделяет память под н элементов указанного типа, в данном случае int
 						   // И возвращает адрес выделенной памяти.
 						   // Этот адрес мы присваиваем указателю arr	
 						   // Указатель нужен, чтобы сохранить адрес массива
-	
-	
+
+
 	FillRand(arr, n);
 	Print(arr, n);
 	cout << endl;
 
 	int SizeODD = 0;
 	int SizeEVEN = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] % 2 == 0) SizeEVEN++;
+		else SizeODD++;
+	}
+
 	int* even = new int[SizeEVEN];
 	int* odd = new int[SizeODD];
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0,j=0,k=0; i < n; i++)
 	{
 		if (arr[i] % 2)
-		{
-			odd[SizeODD] = arr[i];
-			SizeODD++;
-		}
+			odd[j++] = arr[i];
 		else
-		{
-			even[SizeEVEN] = arr[i];
-			SizeEVEN++;
-		}
-
+			even[k++] = arr[i];
 	}
 	Print(even, SizeEVEN);
 	cout << endl;
 	Print(odd, SizeODD);
 
 	delete[] arr;
+	delete[] even;
+	delete[] odd;
 #endif // HOMEWORK
 
 
